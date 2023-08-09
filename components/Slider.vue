@@ -6,23 +6,23 @@
         <button @click="previousSlide()" id="prev" class="border px-4 mr-2">prev</button>
       </div>
       <div id="scrlBody" class="flex w-[400px] md:w-[1200px] h-[100px] border-4 border-black overflow-x-hidden flex-row">
-        <div class="flex flex-row">
-          <div class="item min-w-[400px] h-auto border border-red-500">
+        <div class="scrlBody flex flex-row">
+          <div class="item min-w-[400px] h-auto bg-red-500 border border-red-500 mr-2">
           1
           </div>
-          <div class="item min-w-[400px] h-auto border border-green-500">
+          <div class="item min-w-[400px] h-auto bg-green-500 border border-green-500 mr-2">
             2
           </div>
-          <div class="item min-w-[400px] h-auto border border-blue-500">
+          <div class="item min-w-[400px] h-auto bg-blue-500 border border-blue-500 mr-2">
             3
           </div>
-          <div class="item min-w-[400px] h-auto border border-pink-500">
+          <div class="item min-w-[400px] h-auto bg-pink-500 border border-pink-500 mr-2">
             4
           </div>
-          <div class="item min-w-[400px] h-auto border border-purple-500">
+          <div class="item min-w-[400px] h-auto bg-purple-500 border border-purple-500 mr-2">
             5
           </div>
-          <div class="item min-w-[400px] h-auto border border-pink-500">
+          <div class="item min-w-[400px] h-auto bg-pink-500 border border-pink-500 mr-2">
             6
           </div>
         </div>
@@ -60,7 +60,7 @@
 </script>
 
 <style scoped>
-#scrlBody{
+.scrlBody{
   scroll-behavior: smooth;
 }
 </style>
