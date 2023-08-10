@@ -6,23 +6,23 @@
         <button @click="previousSlide()" id="prev" class="border px-4 mr-2">prev</button>
       </div>
       <div id="scrlBody" class="flex w-[400px] md:w-[1200px] h-[100px] border-4 border-black overflow-x-hidden flex-row">
-        <div class="scrlBody flex flex-row">
-          <div class="item min-w-[400px] h-auto bg-red-500 border border-red-500 mr-2">
+        <div class="flex flex-row">
+          <div class="item min-w-[400px] h-auto bg-red-500 border border-red-500">
           1
           </div>
-          <div class="item min-w-[400px] h-auto bg-green-500 border border-green-500 mr-2">
+          <div class="item min-w-[400px] h-auto bg-green-500 border border-green-500">
             2
           </div>
-          <div class="item min-w-[400px] h-auto bg-blue-500 border border-blue-500 mr-2">
+          <div class="item min-w-[400px] h-auto bg-blue-500 border border-blue-500">
             3
           </div>
-          <div class="item min-w-[400px] h-auto bg-pink-500 border border-pink-500 mr-2">
+          <div class="item min-w-[400px] h-auto bg-pink-500 border border-pink-500">
             4
           </div>
-          <div class="item min-w-[400px] h-auto bg-purple-500 border border-purple-500 mr-2">
+          <div class="item min-w-[400px] h-auto bg-purple-500 border border-purple-500">
             5
           </div>
-          <div class="item min-w-[400px] h-auto bg-pink-500 border border-pink-500 mr-2">
+          <div class="item min-w-[400px] h-auto bg-pink-500 border border-pink-500">
             6
           </div>
         </div>
@@ -38,29 +38,40 @@
   export default {
     methods: {
       nextSlide(){
-        // const element = document.getElementById("scrlBody");
+        const element = document.getElementById("scrlBody");
+        if(element.scrollLeft < 1200){
+          let x = element.scrollLeft += 400;
+        } else {
+          let y = document.getElementById("scrlBody").scrollLeft = "-1200px";
+        }
+
+
         // let x = element.scrollLeft += 400;
         // console.log("Q", element.scrollLeft);
         // console.log("A", x);
 
-        let sliderMain = document.getElementById('scrlBody');
-        let item = sliderMain.getElementsByClassName('item');
-        sliderMain.append(item[0]);
+        // let sliderMain = document.getElementById('scrlBody');
+        // let item = sliderMain.getElementsByClassName('item');
+        // sliderMain.append(item[0]);
         
       },
       previousSlide(){
-        // const element = document.getElementById("scrlBody");
-        // element.scrollLeft -= 400;
-        let sliderMain = document.getElementById('scrlBody');
-        let item = sliderMain.getElementsByClassName('item');
-        sliderMain.prepend(item[item.length - 1]);
+        const element = document.getElementById("scrlBody");
+        if(element.scrollLeft <= 1200){
+          element.scrollLeft -= 400;
+        }
+        // let x = element.scrollLeft -= 400;
+        
+        // let sliderMain = document.getElementById('scrlBody');
+        // let item = sliderMain.getElementsByClassName('item');
+        // sliderMain.prepend(item[item.length - 1]);
       },
     }
   }
 </script>
 
 <style scoped>
-.scrlBody{
+#scrlBody{
   scroll-behavior: smooth;
 }
 </style>

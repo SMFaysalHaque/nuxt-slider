@@ -1,9 +1,17 @@
 <template>
-  <Slider/>
+  <div>
+    <Slider/>
+    <MultipleSlider/>
+  </div>
 </template>
 
 <script>
+import MultipleSlider from '../components/MultipleSlider.vue'
+
 export default {
-  name: 'IndexPage'
+    name: 'IndexPage',
+    comments: {
+      MultipleSlider
+    }
 }
 </script>
